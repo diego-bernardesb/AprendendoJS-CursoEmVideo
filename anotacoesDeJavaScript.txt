@@ -1,0 +1,630 @@
+Aula 5 variaves e tipos primitivos
+
+Comentarios 
+// comentarios em 1 linha
+/**/ comentarios mais de 1 linha
+
+
+Variavel 
+
+= --> recebe !
+= null --> Anular dados !
+
+var --> variavel espaço para dados !
+
+identificadores --> nome das variaveis !
+/*
+podem começar com letras $ ou _ ,
+não podem começar com números,
+é possível conter letras, números, acentos ou símbolos,
+não podem conter espaços e nem palavras chaves.
+*/
+
+dicas para identificadores !
+/*
+Maiúsculas e minúsculas são diferentes,
+Nomes coerentes para variáves,
+Evitar definir var com n1n2n3... ou abc...!
+*/
+
+Tipos primitivos primordiais !!
+
+numeros inteiros ou fracionados são considerados NUMBER
+valor internos do number --> Infinity e NaN
+
+palavras ou numeros como documentos são considerados STRING
+
+True e False são considerados BOOLEAN
+
+NULL
+--> Transforma a variavel em um object. 
+
+UNDEFINED
+
+OBJECT É representado tambem por {}
+--> ARRAY É representado por []
+
+FUNCTION
+--> Representado da seguinte fortma function()
+
+Comando Typeof
+--> identificar o tipo da variavel 
+
+Aula 6 Tratamento de dados !!
+
+Manipulação de dados --> 
+
+conversão de dados --> 
+String -> number
+
+parseInt(n) //numeros inteiros
+parseFloat(n) //numeros real
+
+Number -> String
+
+String(n) //converte number em uma string
+n.toString(n) //converte oque vc quer na frente e dps entra com a string
+
+Fomatando string !!
+/*
+var s = 'JavaScript'
+
+Não faz faz interpolação //'Eu estou aprendendo s'
+Usa concatenação //'Eu estou aprendendo ' + s 
+template string //`Eu estou aprende ${s}`
+*/
+
+s.length //quantos caracteres a string tem
+s.toUpperCase() //tudo para maiúsculas
+s.toLowerCase() //Tudo para minúscula
+
+Formatando Números!
+
+n.toFixed() //Determina quantas casas decimais o número tem
+n.toFixed().replace('um', 'outro') //Troca um pelo outro
+n.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})//transforma na moeda escolhida real, dollar, euro...
+
+
+
+Aula 7 Operadores (Parte 1)
+
+Aritiméticos -->
+
+5 + 2 ->7 //adição
+5 - 2 -> 3//subitração
+5 * 2 -> 10 //multiplicação
+5 / 2 -> 2.5 //divisão real
+5 % 2 -> 1 //divisão inteira, resto da divisão
+5 ** 2 -> 25 //potênciação
+
+Ordem de precedência ->
+
+( ) -> //parentenses os primeiro na ordem de precedência
+** -> //potência o segundo na ordem de precedência
+*, /, % -> //multiplicação, divisião e resto os terceiros na ordem de precedência 
++, - -> //adição e subritração os últimos na ordem de precedência
+
+
+Atribuição -->
+
+var n = 3
+
+n = n + 4 -> n = 3 + 4 -> n = 7 //é atribuido o novo valor substituindo o anterior.
+
+simplificação ->
+ 
+Só e valido quando a msm variavel recebe ela msm em alguma outra operação
+usando a syntax +=, -=, *=, /=, **= e o %=. e assim tornando a expressão 
+mas curta 
+
+var n = 3
+n += 4 -> n = 7. 
+
+incremento ->
+
+Incrementa uma variavel com o a syntax n++ ou ++n, ou decremento com a syntax
+n-- ou --n //sempre incrementando de 1 em 1.
+
+Aula 8 Operadores (Parte 2) -->
+
+Relacionais -->
+/*
+Todos os operadores relacionais >, <, >=, <=, == e != entregam dados boolean,
+assim apenas respondendo verdadeiro ou falso  true and false.
+*/
+
+Propriedade dos operadores relacionais -->
+
+5 > 2   -> //maior que 
+7 < 4   -> //menor que
+8 >= 8  -> //maior ou igual
+9 <= 7  -> //menor ou igual
+5 == 5  -> //igualdade
+4 != 4  -> //diferença
+5 === 5 -> //igualdade restrita (identico)
+5 !== 5 -> //desigual restrito (desigual)
+
+/*
+A diferença entra os operadores de == igualdade e === igualdade restrita é que 
+se vc tiver valores que tenha o msm peso de igualdade, mais que querem trazer
+informações diferente por exemplo 5 == '5' -> true, ou seja ele confirma que o
+o 5 numero tem o msm valor do '5' string, porém o sinal de igualdade restrita
+faz a diferenciação e considera essa operação falsa, por não serem do msm tipo
+e o operador !== funciona proporcionalmente inverso ao operador de igualdade 
+restrita.
+*/
+
+ 
+Lógicos -->
+
+!  ->//negação(Só não pode ocorrer a regra determinada)
+&& ->//conjunção corresponde a um "e" (É necessario realizar todas as regras determinadas)
+|| ->//disjunção corresponde a um "ou"(é necessario realizar ao menos 1 ou todas as regras determinadas)
+
+Operador unario 
+
+! -> não
+
+	!True  -> False
+	!False -> True
+/*
+Ou seja sempre que uma operação é !(não é) verdadeira é falsa, e uma coisa que 
+!(não é falsa) é verdadeira. 
+*/
+
+Operadores binario
+
+&& -> E
+
+	True  && True  -> True
+	True  && False -> False
+	False && True  -> False
+	False && False -> False
+/*
+esse operador só identifica verdadeiro caso suas 2 regras sejam obedecidas como
+na primeira linha do exemplo
+*/
+
+|| -> ou
+
+	True  || True  -> True
+	True  || False -> True
+	False || True  -> True
+	False || False -> False
+/*
+esse operador funciona de maneira binaria, onde necessita que ao menos uma das 
+2 regras estabelecidas seja verdadeira diferente apenas do ultimo exemplo onde
+nenhuma das regras é atendida
+*/
+
+Ordem de operação ->
+
+/* 
+No caso de uma operação a > b && b% 2 == 0, pela ordem de precedência as operações
+aritimeticas são realizadas antes dos operadores logicos, sendo assim resolvido 
+primeiros a > b e b % 2 == 0 antes do operador && realizar a conjunção.
+*/
+
+Precedência dos operadores ->
+
+Aritimeticos //os primeiros a serem realizados em qlqr tipo de operação
+Relacionais  //os segundos a serem realizados seguindo a ordem de precedencia
+Logicos	     //os ultimos a serem realizados seguindo a precedência começando
+1º !, 2º && e 3º ||.
+
+
+Ternários -->
+
+/*
+O operador ternário realiza um teste, e com o resultado do teste determina qual das
+opções ele tomara, no caso da expressão 
+var média = 5.5
+
+média >= 7? 'APROVADO' : 'REPROVADO' -> 'REPROVADO' 
+
+seria determinado reprovado por não atender o teste, que está com o valor abaixo
+do exigido pelo teste, sendo assim acionando a opção reprovado.
+*/
+
+
+Aula 9 
+
+Introdução ao DOM -->
+
+DOM -> Document Object Model -> 
+
+
+Seleção de elementos ->
+
+innerText //tras o texto sem formatação
+innerHTML //tras o texto com a formatação do HTML como as tags dentro do elemento
+
+Os ([]) colchetes são usados para definiar a posição de prioridade de cada objeto
+
+getElementsByTagName()[]   //seleciona os objetos buscando a tagName
+getElementById()           //seleciona os objetos buscando o id
+getElementsByName()[]      //seleciona os objetos buscando o Name
+getElementsByClassName()[] //seleciona os objetos buscando o classname
+
+Seleção dos elementos por seletores ->
+
+querySelector()		/*é utilizado como um codigo mais recente, que busca todos
+			  os seletores como no CSS exemplo-> querySelector(div#msg)
+			  ou querySelector(div.msg)*/
+
+querySelectorAll()
+
+
+Aula 10 -->
+
+Eventos DOM -->
+/*Tudo que possa acontecer com este elemento, como eventos de mouse quando ele entra
+dentro do elemento ou se mover ou clicar e sair.*/
+
+/*Eventos não ocorrem automaticamente como os exemplos vistos até agora eles precisam
+ser ativados por algum tipo de evento para assim o bloco ser executado*/
+
+/*Bloco é um codigo programado delimitado entre os sinais de chaves "{}", e precisão 
+ser acionado por um evento para que seja executado*/
+
+/*Os eventos podem ser descrito no HTML usando o nome da ação como onclick="clicar()"
+para o clique de um mouse ou tbm pode ser descrito no JavaScript para deixar o codigo
+html menos poluido da seguinte forma n.addEventListener('click',clicar) para a ação 
+de clicar do mouse*/
+
+Aula 11 -->
+
+Condições -->
+/*segue o fluxo do codigo de cima para baixo, até encontrar uma condição que pode
+definir que o codigo siga um caminho expecifico caso ele atenda esta condição
+e volte a seguir o fluxo do codigo de cima para baixo expressado ->desvio condicional
+*/
+
+/*A condição é representada em forma de blocos , onde o primeiro bloco é representado
+por if{true} seguido por outro bloco sendo o else{false}, para caso ele não cumpra
+a condição if ira executar a condição else*/
+
+
+Sequência ->
+
+//segue o fluxo do codigo de cima para baixo
+
+
+Tipos de condições ->
+
+Condição simples> //é uma condição realizada apenas com um bloco por ex: if(cond){true}
+
+/*na condição simples caso a condição if seja falsa nada ocorre pois ele só tem a
+condição verdadeira para seguir o fluxo do codigo*/
+
+Condição composta> //é uma condição q representa um bloco se for atendida, ou outro bloco caso não seja atendida
+
+Condição aninhada> //é uma condição dentro de outra condição e assim por diante.
+
+ex:  if (cond1) {
+	   bloco1
+	}else{
+	    if(cond2) {
+		bloco2
+		}else{
+		   bloco3
+			}
+Assim sendo aninhada uma condição dentro de outra condição assim por diante.
+
+Condições múltiplas> //diferente das condições anteriores ela tem diversas condições ligadas a ela
+sem a necessidade de else if para adicionar novos blocos
+
+ex :
+	switch (expressão){//a esperesão usada para realizar condições multiplas
+	case valor1: 
+		bloco1
+		break //"obrigatorio"  funciona como um freio para quando a condição é aceita
+	case valor2:
+		bloco2
+		break
+	case valor3:
+		bloco3
+		break
+	default:
+		bloco4
+		break
+}/*está estrutura não é valida para testar intervalos, funcionando apenas com numeros 
+inteiros e strings*/
+
+Aula 13 
+
+Repetições(parte 1)-->
+
+laços ->/*é um loop que testa uma condição enquanto"while" for verdade cria um loop
+	de repetição, até que essa condição seja quebrada para voltar a seguir o
+	fluxo do codigo*/
+
+loop com teste logico no inicio
+
+Ex:  function comerPizza(){   	//função comer pizza
+		while(temFatia()){  //função de loop enquanto tiver fatia se repete o loop
+			comerFatia()
+			}	//acabou as fatias o codigo segue o fluxo
+		 }
+
+loop com teste logico no final
+
+/*A expressão fazer"do" funciona da msm forma que a while, porem o teste logico é 
+realizado apos o bloco*/
+
+Ex: 	do {
+			comePizza
+		}while(temPizza)
+	
+
+Aula 14 -->
+
+Repetição(parte 2)-->
+
+Estrutura for ->/*A estrutura é composta por uma padrão com inicialização, teste 
+		logico e termina com o incremento, dessa forma inicializa declarando
+		o valor da variavel, realiza o teste logico em seguida faz o incremento
+		e se a condição ainda for verdadeira, retorna e realiza o msm loop até
+		que a condição seja falsa para seguir o fluxo natural do codigo*/
+
+ex:
+		for(var c = 1//inicialização; c <= 10//teste; c++//incremento){
+				console.log(c)
+				
+		}
+
+Aula 15 -->
+
+Variáveis-->
+Variaveis simples -> //Só armazera 1 valor por vez
+
+Variáveis compostas (ARRAYS)-> //Armazena mais de um valor ao msm tempo 
+
+/*Um array é uma variável tem varios elementos e cada elemento tem o seu valor
+é composto de um valor e por uma chave de indentificação*/ 
+
+.push -> //adiciona um elemente sempre na ultima possição
+
+.sort() -> //coloca todos os elemente em ordem crescente
+     //para organizar numero em ordem crescente é necessario add .short((a,b)=>a-b)
+
+estrututura de repetição de arrays ->
+			(CODIGO TRADICIONAL)
+	for (let pos = 0; pos <num.length; pos++){//pos inciana na posição[0], até ser menor que o tamanho do vetor.
+		console.log(num[pos]) //num[pos] vai mostra os valores na ordem do loop
+}
+	
+repetição com for in ->
+			(METODO SIMPLIFICADO)
+	for(let pos in num){  //para cada POS dentro de NUM
+		console.log(num[pos])//eu vou mostrar NUM[POS]
+}
+
+
+Como buscar valores dentro de arrays ->
+
+.indexOf(?)//O comando indexOf() vai buscar o valor determinado dentro do parenteses buscando apenas o VALOR e não a CHAVE ou indicie
+ 
+// quando ele não encontrar o valor ele retorna o valor -1.
+
+Aula 16 
+
+Funções-->//São chamadas executadas assim que são chamadas ou em decorrencia de algum evento
+	  //Uma função pode receber parametros e receber um resultado
+
+	
+Chamadas//
+
+Parametros//
+
+Ação//
+
+Retorno// 
+
+ex:
+	function parimp(n){	   //2º-a função tem um parametro 'n' que vai ser chamado pela ação
+		if(n%2==0){	   //3º-a função realiza o teste logico para confirmar a resposta para a chamada
+		   return 'par'    
+	}else{
+	       return 'impar'	   //4º-(retorno) a chamada reconhece o resultado e subistitui a variavel 'res' para mostrar o resultado
+	}
+	}
+let res = parimp(11)		//1º-A ação(chamada) da variavel res aciona a função subistituindo o parametro
+
+
+Aula 17 -->
+
+Aprendizado do curso ->
+
+Fundamentos
+Variaveis e dados
+Operadores
+Condições
+Repetições
+Arrays
+Function
+DOM
+
+Daqui pra frente ->
+
+Estudar sobre funções=> Arrow function, callbacks, funcções anonimas, as iife, js funcional
+
+Estudar muito sobre objetos=> um conceito muito importante
+
+modularização=> deixar codigos separados em arquivos separados, e reutilizar codigos
+
+Expressões regulares => para validação de dados e economizar codigos
+
+JSON=> Estrutura de objetos pra transmitir dados e salvar dados localmente
+
+AJAX=> tecnologica usada no google imagem facebook e youtube, de carregamento automatico da pagina sem percisar avançar pagina
+
+NodeJS=> Estudar NODE para fazer o script rodar no servidor para ter uma visão melhor
+
+
+
+Proximos passos ->
+
+Objetos introdução -->
+/* Arrays tem os indicies fixos, e os objetos nos premitem nomear os indices
+dessa forma tornando mais detalhados e com mais funcionalidades sendo possivel
+até msm declarar functions, dentro de um indicie do objeto*/
+
+Ex:  let amigo = {nome:'José',sexo:'M',peso:85.4,engordar(p){}}
+
+dessa forma temos o indice [0] nomeado como 'nome', e assim por diante, e dentro de seus respectivos indicies
+seus valores atribuidos.
+
+
+
+
+---------------------\\-------------------------\\----------------------------\\-------------------------------\\------
+
+
+FreecodeCamp.com
+
+ES6
+
+Const --> podem ser mudadas se forem declaradas arrays
+
+ex:		const s = [5,6,7,]
+		s = [1,2,3]//Erro imutavel
+
+	const s = [5,6,7]
+	s[0] = 1
+	s[1] = 3
+	s[2] = 3//Totalmente mutaveis, selecionando o indicie
+
+
+
+Object.freeze() -->//congela o elemento  deixando ele impossibilitado de receber, atualizar ou excluir propriedades
+
+//e o object.freeze rejeitara qlqr tentativa de mudança será rejeitada sem ERRO
+
+
+Funções de setas e anonimas-->
+
+//São usadas quando temos uma função que passa um argumento para outra função então não nomeamos esta função
+
+EX: const myFunc = function(){		//versão pradrão
+		const myVar ='valor';
+		  return myVar;	
+		}
+
+    consy myFunc = () =>{//versão com a função anonima e seguida pela "=>" seta ou arrow abrindo o bloco para função
+	cont myVar ='valor';
+	 return myVar;
+	}
+
+const myFunc = () => 'valor'; /*só é permitido caso a função não tenha corpo e apenas 
+			      um return podendo omitir todo o corpo e as chaves*/
+
+Funções de seta ->//Com as funções regulares as funções de setas tbm podem receber parametros
+
+//caso uma função de seta tiver um unico parametro os parenteses do parametro devem ser omitidos
+
+//É possivel ter mais de um parametro nas funções de setas, porém os parenteses devem ser escritos
+
+
+Operador SPREAD->//Nos permite expandir arrays e outra expressões em lugares onde parametros e elementos são esperados
+
+
+
+Use "GETTERS" e "SETTERS" para controlar objetos -->
+
+getter ->//destinase a retornar(obter) o valor da variavel privada de um objeto sem que o usuario acesse diretamente a variavel privada
+
+setter ->//Modifica(definir) o valor da variavel privada de um objeto com vasse no valor passado para a função "setter"(essa operação envolve calculos e pode sobrescrever completamente o valor anterior)
+
+
+Push-> adiciona um item no final de um array
+
+unshift -> adiciona um item no começo de um array
+
+pop-> remove o ultimo item de um array
+
+shift-> remove o primeiro item de um array
+
+splice(1,2,3)-> remove itens de acordo com o indice(indice do array,quantidade de itens,   )
+
+splice()[para adicionar itens]-> adicionas itens ao ser inserido um indice e a quantidade de itens a serem
+				inseridos
+
+ex:	const number= [10,11,12,12,15]
+	const startIndex = 3
+	const amountToDelete = 1
+	number.splice(startIndex, AmountToDelete, 13,14)
+		
+		return(number) [10,11,12,13,14,15]
+
+		As novas constantes declaradas significam 
+	
+	startIndex => o indicie da matriz onde começara a ser inserido
+	amountToDelete => A quantidade de itens a ser deletado
+	E o ultimo espaço os itens que seram inseridos na matriz
+
+
+
+Slice-> Modifica uma matriz sendo o primeiro indice o qual sera o inicio
+	da extração, e o segundo onde será o fim da extração.(A extração
+	ocorrera até o indicie mais não o inclui nesse processo)
+
+
+Valores chaves a objetos ->
+
+Notação de ".(ponto)"-> para adicionar um par de palavra chave com a notação de ponto
+			citase o nome da variavel."a palavra chave" = "seu valor"
+
+Notação de "[]" -> para notação de colchete, é necessario declarar uma nova variavel com
+		   com o valor sendo referente a plavra chave adcionado ao objeto e em seguida
+		   chmar a variavel[nome da nova variavel]= "O valor "
+
+
+Reduce -->
+
+/*
+A função de retorno de chamada aceita quatro argumentos. O primeiro argumento é conhecido 
+como o acumulador, ao qual é atribuído o valor de retorno da função de retorno de chamada 
+da iteração anterior, o segundo é o elemento atual sendo processado, o terceiro é o índice
+desse elemento e o quarto é a matriz sobre a qual reduz é chamado.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
